@@ -1,0 +1,64 @@
+# CHANGELOG
+
+## 2026-03-14 (UX polish)
+- Added toast notifications (sonner) for all CRUD operations and data fetch errors across every panel.
+- Enhanced global button styles: hover brightness, active scale, box-shadow, disabled opacity, and `cursor: pointer`.
+- Added loading spinners (Loader2) to all action buttons: auth submit, sign-out, compliance download, resource filter.
+- Converted compliance panel to client component with async download, loading state, and success/error toasts.
+- Created dedicated `SignOutButton` client component with loading spinner and form status integration.
+- Enhanced language switcher with toast success/info notification on language change.
+- Improved therapist matching slot picker UX: added cancel button, descriptive helper text, and cleaner layout.
+- All changes verified: `pnpm typecheck`, `pnpm lint`, `pnpm test` pass cleanly.
+
+## 2026-03-14
+- Added phase-wise delivery plan in `PLAN.md`.
+- Initialized and populated `/doc` operating artifacts.
+- Bootstrapped Next.js 16 project and project conventions from `AGENTS.md`.
+- Added Supabase foundation:
+  - SSR clients and middleware session refresh
+  - auth server actions and auth callback route
+  - role-aware route protection
+- Added SQL migrations:
+  - `202603141040_phase1_foundation.sql`
+  - `202603141120_phase2_seed_resources.sql`
+  - `202603141130_phase4_employer_analytics_views.sql`
+- Added employee-facing MVP APIs and pages:
+  - assessments, matching, appointments, moods, resources
+- Added provider-facing MVP APIs and pages:
+  - availability, appointment status updates, session notes, messaging, crisis events
+- Added employer-facing MVP APIs and pages:
+  - analytics summary, compliance audit CSV export
+- Added hardening:
+  - audit helper, rate limiting utility, health endpoint, Vercel security headers
+- Added testing/tooling:
+  - Vitest config + matching unit test
+  - Playwright config + baseline e2e spec
+  - scripts for lint/typecheck/test/build/e2e
+- Updated env handling to lazy `getServerEnv()` / `getClientEnv()` resolution to avoid import-time build failures.
+- Switched verification runtime to Node `v24.8.0` and completed:
+  - `pnpm typecheck`
+  - `pnpm lint`
+  - `pnpm test`
+  - `pnpm build` (with env vars)
+  - `pnpm test:e2e` (with env vars and installed Chromium)
+- Replaced deprecated Next.js `middleware.ts` convention with `proxy.ts`.
+- Added feature expansion architecture:
+  - `components/features/feature-content.tsx`
+  - `components/features/chatbot-triage-panel.tsx`
+  - `components/features/micro-interventions-panel.tsx`
+  - `components/messaging/secure-messaging-hub.tsx`
+  - `lib/features/catalog.ts`
+- Added dynamic role feature routes:
+  - `app/employee/[feature]/page.tsx`
+  - `app/provider/[feature]/page.tsx`
+  - `app/employer/[feature]/page.tsx`
+  - `app/admin/[feature]/page.tsx`
+- Expanded dashboard role navigation to include core and advanced feature pages with sectioned UI.
+- Updated provider messaging to rich contact/thread UX with crisis queue integration.
+- Standardized role page shells for provider and employer sections and session room back navigation.
+- Expanded feature API access map for:
+  - `multi_language_support`
+  - `cultural_competency_matching`
+- Updated runtime config to Node `v24.8.0`:
+  - `.nvmrc` added
+  - `package.json` engine pinned to `24.8.0`

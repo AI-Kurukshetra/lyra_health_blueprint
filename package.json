@@ -1,0 +1,61 @@
+{
+  "name": "lyra-health",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "24.8.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "db:bootstrap": "tsx scripts/bootstrap-supabase.ts"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@jitsi/react-sdk": "^1.4.4",
+    "@supabase/ssr": "^0.9.0",
+    "@supabase/supabase-js": "^2.99.1",
+    "@tanstack/react-query": "^5.90.21",
+    "@tanstack/react-query-devtools": "^5.91.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dotenv": "^17.3.1",
+    "lucide-react": "^0.577.0",
+    "next": "16.1.6",
+    "nextjs-toploader": "^3.9.17",
+    "pg": "^8.20.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-hook-form": "^7.71.2",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.5.0",
+    "zod": "^4.3.6",
+    "zustand": "^5.0.11"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^20",
+    "@types/pg": "^8.18.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitest/coverage-v8": "^1.6.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "jsdom": "^28.1.0",
+    "playwright": "^1.58.2",
+    "tailwindcss": "^4",
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "vitest": "^1.6.0"
+  }
+}
